@@ -1,0 +1,30 @@
+type Query {
+    # 查询商品
+    goodsById(id: ID): Goods
+
+    goods(page: Int, size: Int, title: String!): [Goods]
+}
+
+# 商品
+type Goods {
+    # id
+    id: ID
+
+    # 商品标题
+    title: String
+
+    # 主页图片
+    primaryImage: String
+
+    # 显示最低价
+    minSalePrice: String
+
+    # 显示最高价
+    maxSalePrice: String
+
+    # 商品图片集合
+    images: [String]
+
+    # 商品描述: 目前仅支持图片
+    description: [String]
+}
